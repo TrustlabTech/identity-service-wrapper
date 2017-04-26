@@ -1,0 +1,17 @@
+{
+  "name": "identity-service-wrapper",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ethereumjs-tx": "^1.2.5",
+    "ethereumjs-util": "^5.1.1",
+    "web3": "^0.18.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stephan Bothma <stephan@io.co.za>",
+  "license": "ISC"
+}
