@@ -8,7 +8,7 @@ const registry_abi = require('./contracts/registry.abi')
 const did_abi = require('./contracts/did.abi')
 const registry_addr = require('./contracts/registry.addr')
 
-module.exports = function(geth_host) {
+module.exports = function(provider) {
 
   var tasks = {}
   var task_timer = setInterval(function() {
@@ -18,7 +18,7 @@ module.exports = function(geth_host) {
     }
   }, 10 * 1000)
 
-  const web3 = new Web3(new Web3.providers.HttpProvider(geth_host))
+  const web3 = typeof provider === 'string' ? new Web3(new Web3.providers.HttpProvider(provider)) : provider
 
   var didm = web3.eth.contract(registry_abi)
   var did = web3.eth.contract(did_abi)
