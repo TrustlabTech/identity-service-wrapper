@@ -8,7 +8,7 @@ const registry_abi = require('./contracts/registry.abi')
 const did_abi = require('./contracts/did.abi')
 const registry_addr = require('./contracts/registry.addr')
 
-module.exports = function(provider) {
+module.exports = function(provider, verbose) {
 
   var tasks = {}
   var task_timer = setInterval(function() {
@@ -76,7 +76,7 @@ module.exports = function(provider) {
 
         return web3.eth.sendRawTransaction(raw, function(err, txhash) {
           if (err) return on_spawned(err)
-          else return new_task(txhash, on_spawned)
+          else return verbose ? new_task(txhash, on_spawned) : on_spawned(err, txhash)
         })
 
       })
@@ -111,7 +111,7 @@ module.exports = function(provider) {
 
         return web3.eth.sendRawTransaction(raw, function(err, txhash) {
           if (err) return on_updated(err)
-          else new_task(txhash, on_updated)
+          else return verbose ? new_task(txhash, on_updated) : on_updated(err, txhash)
         })
 
       })
