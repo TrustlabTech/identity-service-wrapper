@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/TrustlabTech/identity-service-wrapper.png?label=ready&title=Ready)](https://waffle.io/TrustlabTech/identity-service-wrapper?utm_source=badge)
 # Identity Service Wrapper Library
 
 ## Setup
