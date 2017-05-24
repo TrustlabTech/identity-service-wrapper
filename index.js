@@ -90,7 +90,7 @@ module.exports = function(provider) {
 
     update: function(did_addr, new_ddo, admin_key, on_updated) {
       return new Promise(function(parentResolve, parentReject) {
-        const calldata = did_instance.updateDidContent.getData(new_ddo),
+        const calldata = did_instance.updateDidContent.getData(new_ddo)
         
         const signer_buf = Buffer.from(admin_key, 'hex'),
               signer_adr = `0x${ut.privateToAddress(signer_buf).toString('hex')}`
