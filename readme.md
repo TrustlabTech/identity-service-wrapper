@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/TrustlabTech/identity-service-wrapper.png?label=ready&title=Ready)](https://waffle.io/TrustlabTech/identity-service-wrapper?utm_source=badge)
 # Identity Service Wrapper Library
 
 ## Setup
@@ -40,3 +41,7 @@ wrapper.verify(
 )
 
 ```
+## License
+
+Copyright (c) 2017 Trustlab Pty Ltd, under licence from Global Consent Limited
+See our [License](https://github.com/TrustlabTech/identity-service-wrapper/blob/master/LICENSE.md).
