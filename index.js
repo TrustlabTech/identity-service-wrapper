@@ -39,8 +39,7 @@ module.exports = function(provider) {
 
   const didm = web3.eth.contract(registry_abi),
         did = web3.eth.contract(did_abi),
-        registry = didm.at(registry_addr),
-        did_instance = did.at(did_addr)
+        registry = didm.at(registry_addr)
 
   return {
     spawn: function(admin_addr, owner_addr, signer_key) {
@@ -90,7 +89,8 @@ module.exports = function(provider) {
 
     update: function(did_addr, new_ddo, admin_key, on_updated) {
       return new Promise(function(parentResolve, parentReject) {
-        const calldata = did_instance.updateDidContent.getData(new_ddo)
+        const did_instance = did.at(did_addr),
+              calldata = did_instance.updateDidContent.getData(new_ddo)
         
         const signer_buf = Buffer.from(admin_key, 'hex'),
               signer_adr = `0x${ut.privateToAddress(signer_buf).toString('hex')}`
